@@ -27,7 +27,7 @@ Much waited Selenium 4 has been released on September,2021 with a bunch of new f
   ```
 
  
-#### New Way process to use capabilities
+#### New Way to use capabilities
 #### W3C Protocol
 ```java 
   DesiredCapabilities capabilities = new DesiredCapabilities();
