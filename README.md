@@ -2,7 +2,7 @@
   
   **Appium v7-to-v8 migration Guide**
 
-Much waited Selenium 4 has been released on September,2021 with a bunch of new features and they removes support for the legacy protocol(JWP) and uses the W3C WebDriver standard by default under the hood. Since that appium has been working to get seamless experience of Selenium 4. Beta version of Appium client were updated by urgrading the selenium dependency but there were lots of glitches. Now they have launched the stable version with fixes, but still there are some issues present. Hoping they will fix those issues soon. Let talk's about the changes happened due to this upgradation. 
+Much waited Selenium 4 has been released on September,2021 with a bunch of new features and they remove support for the legacy protocol(JWP) and use the W3C WebDriver standard by default under the hood. Since that appium has been working to get a seamless experience of Selenium 4. Beta version of Appium client were updated by upgrading the selenium dependency but there were lots of glitches. Now they have launched the stable version with fixes, but still there are some issues present. Hoping they will fix those issues soon. Let talk's about the changes happened due to this upgradation. 
 
 **W3C specification compatibility :**
 
