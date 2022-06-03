@@ -2,7 +2,7 @@
   
   **Appium v7-to-v8 migration Guide**
 
-Much waited Selenium 4 has been released on September,2021 with a bunch of new features along with they removes support for the legacy protocol and uses the W3C WebDriver standard by default under the hood. Since that appium has been working to get seamless experience of Selenium 4. Beta version of Appium clients were updated by urgrading the selenium dependency but there was lots of glitches. Now they have launched the stable version with fixes, but still there are some issue present. Hoping they will fix those issues soon. Let talk's about the changes happened due to this upgradation. 
+Much waited Selenium 4 has been released on September,2021 with a bunch of new features and they removes support for the legacy protocol(JWP) and uses the W3C WebDriver standard by default under the hood. Since that appium has been working to get seamless experience of Selenium 4. Beta version of Appium client were updated by urgrading the selenium dependency but there were lots of glitches. Now they have launched the stable version with fixes, but still there are some issues present. Hoping they will fix those issues soon. Let talk's about the changes happened due to this upgradation. 
 
 **W3C specification compatibility :**
 
@@ -51,7 +51,7 @@ Much waited Selenium 4 has been released on September,2021 with a bunch of new f
                 .eventTimings();
 ``` 
 #### Explanation of Code
-1. "Appium:" tag have to use with capability name to tell server specifically that these are appium capabilities. Otherwise users will get error messages like :
+1. "Appium:" tag have to use with capability name to tell server specifically that these are appium capabilities. Otherwise users will get warning messages like :
  ```Java
 Jun 03, 2022 11:28:45 AM org.openqa.selenium.W3CCapabilityKeysValidator validateCapability
 WARNING: Support for Legacy Capabilities is deprecated; You are sending "deviceName" which is an invalid capability. Please update to W3C Syntax: https://www.selenium.dev/blog/2022/legacy-protocol-support/
