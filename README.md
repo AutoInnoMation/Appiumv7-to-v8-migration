@@ -70,4 +70,52 @@ WARNING: Support for Legacy Capabilities is deprecated; You are sending "unicode
 
 #### If there is no driver-specific options class for your driver then either use BaseOptions builder as the base class to define your capabilities or request driver developers to add one. Do not use DesiredCapabilities class for this purpose in W3C context. 
 
+#### Time 
+All methods that use TimeUnit class or where the time is passed as a simple numeric value were replaced with their alternatives using java.time.Duration class.
+
+#### MobileElement
+DefaultGenericMobileElement class has been removed completely together with its descendants (MobileElement, IOSElement, AndroidElement etc.). Use WebElement instead.
+
+#### Touch Actions
+The TouchAction and MultiTouchAction classes have been deprecated. The support of these actions will be removed from future Appium versions. Please use W3C Actions instead or the corresponding extension methods for the driver (if available). Check
+
+##### SCROLL – THE BEHAVIOR
+* Set the event 
+* Move finger into starting position 
+  - Determine scroll area dimensions 
+  - Determine the X&Y on screen 
+* Finger comes in contact with the screen 
+* Wait for a bit 
+* Finger moves to position 
+  - Determine X & Y on screen 
+  - Speed 
+* Finger moves up from the screen
+
+```Java
+//Scrollable Element
+WebElement ele01 = driver.findElement(AppiumBy.id("elementID"));
+
+int centerX = ele01.getRect().x + (ele01.getSize().width/2);
+
+double startY = ele01.getRect().y + (ele01.getSize().height * 0.9);
+
+double endY = ele01.getRect().y + (ele01.getSize().height * 0.1);
+//Type of Pointer Input
+PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH,"finger");
+//Creating Sequence object to add actions
+Sequence swipe = new Sequence(finger,1);
+//Move finger into starting position
+swipe.addAction(finger.createPointerMove(Duration.ofSeconds(0),PointerInput.Origin.viewport(),centerX,(int)startY));
+//Finger comes down into contact with screen
+swipe.addAction(finger.createPointerDown(0));
+//Finger moves to end position
+swipe.addAction(finger.createPointerMove(Duration.ofMillis(700),
+        PointerInput.Origin.viewport(),centerX, (int)endY));
+//Get up Finger from Srceen
+swipe.addAction(finger.createPointerUp(0));
+
+//Perform the actions
+driver.perform(Arrays.asList(swipe));
+```
+
 To be continued.....                                                                                                       
