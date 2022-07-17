@@ -17,9 +17,8 @@ public class Tutorials07 {
     public static void main(String[] args) {
         UiAutomator2Options options = new UiAutomator2Options()
                 .setPlatformName("Android")
-                .setDeviceName("710KPGS0516231").setAppPackage("net.skyscanner.android.main")
-                .setAppActivity("net.skyscanner.app.presentation.view.splash.SplashActivity")
-                .setUnlockKey("6263")
+                .setDeviceName("Add Device Id/Name").setAppPackage("appPackage")
+                .setAppActivity("appActivity")
                 .setNoReset(true)
                 .eventTimings();
 
@@ -33,7 +32,7 @@ public class Tutorials07 {
             throw new RuntimeException(e);
         }
 
-        WebElement ele01 = driver.findElement(By.xpath("//android.widget.ImageView[@content-desc='Flights' or @resource-id='net.skyscanner.android.main:id/flights_icon']"));
+        WebElement ele01 = driver.findElement(By.xpath("xpath"));
 
         //fullscreenScreenshot(driver);
 
@@ -91,7 +90,7 @@ public class Tutorials07 {
             System.out.println(screenshotLocation.toString());
 
         } catch (IOException e) {
-// TODO Auto-generated catch block
+
             e.printStackTrace();
         }
         return screenshotLocation.toString();
